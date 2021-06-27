@@ -8,8 +8,8 @@ from typing import Union, Tuple, List
 
 
 class CelebADataset(Dataset):
-    def __init__(self, train: bool = True) -> None:
-        self._path = "celeba_data/"
+    def __init__(self, train: bool = True, path: Path = "celeba_data/") -> None:
+        self._path = path
         self.images_dir_path = self._path + "images/"
         self.file = self._path + "train.csv" if train else self._path + "val.csv"
         self.header = pd.read_csv(self.file)
